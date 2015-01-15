@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="scotchApp" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>LOGIN</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bower_components/bootstrap-3.2.0/css/bootstrap.min.css" rel="stylesheet" >
+    <!-- Custom styles for this template -->
+    <link href="CSS/signin.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="CSS/main.css" rel="stylesheet">
+    <!-- Angular -->
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <!-- slide menu cbp -->
+    <link rel="stylesheet" type="text/css" href="CSS/cbp_slidemenu/css/default.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/cbp_slidemenu/css/component.css" />
+    <script src="CSS/cbp_slidemenu/js/modernizr.custom.js"></script>
+    <script>
+      
+    </script>
+    
+    <script src="app.js"></script>
+    <script src="globVar.js"></script>
+    <script src="filter.js"></script>
+    <script src="partials/LoginController.js"></script>
+    <script src="partials/forgotPasswordController.js"></script>
+    <script src="partials/registerController.js"></script>
+    <script src="partials/homeController.js"></script>
+    <script src="partials/scotchController.js"></script>
+    <script src="partials/checkInController.js"></script>
+    <script src="partials/searchController.js"></script>
+    <script src="partials/settingsController.js"></script>
+  </head>
+
+    <body class="cbp-spmenu-push">
+
+      <div ng-view></div>
+      
+      <!-- start of footer -->
+      <div class="footer">
+        <script src="bower_components/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+        <script src="CSS/cbp_slidemenu/js/classie.js"></script>
+      </div>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- start of body -->
+    <!-- nav bar -->
+    <div id="navBar" class="navDisplayNone">
+      <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="mainMenuLeft">
+        <h3>Menu</h3>
+        <li ng-repeat="(id, list) in homeList" ng-click="listClick(id)">
+          {{list.name}}
+        </li>
+      </nav>
+      <nav class="navbar navbar-default searchNavBar" role="navigation">
+        <div class="navPadding">
+          <div class="title">SEARCH</div>
+            <span id="navMenu" ng-click="listClick('menu')" class="glyphicon glyphicon-list pull-left" ></span>
+            <span ng-click="listClick(3,'search')" class="glyphicon glyphicon-search pull-right" ></span>
+        </div>
+      </nav>
+    </div>
+    <!-- SEARCH BAR -->
+    <div class="search input-group">
+      <input type="text" class="form-control" style="border-radius:0px;" ng-model="searchText" placeholder="Scotch...">
+    </div>
+    <!-- SEARCH RESULTS -->
+    <ul class="searchResult list-group">
+        <li class="list-group-item searchResultPadding"
+          ng-repeat="(id, list) in scotchSearchList | filter:searchText">
+            <button class="btn btn-default checkInBtn" type="button"
+              ng-click="toCheckIn()">Check-In</button>
+            <div ng-click="modal(list.name, list.classification)" class="searchResultTitle">{{list.name}} {{list.classification}}</div>
+            
+        </li>
+    </ul>
+    <!-- Model for scotchd details -->
+    <div class="modal fade" id="scotchModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 id="modalTitle" class="modal-title" id="myModalLabel">{{modalDetails.name}} {{modalDetails.classification}}</h4>
+            <button id="modalBtnClose" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+          <div id="scotchModal" class="modal-body">
+            
+            <div class="thumbnail pull-right scotchModalDescription">
+                <img ng-src="images/{{modalDetails.image}}" >
+            </div>
+            <span style="text-align : justify;">
+              <div class="scotchData">
+                <b>Region:</b> {{modalDetails.region}}</br>
+                <b>Sub-Region:</b> {{modalDetails.subRegion}}
+              </div>
+              <div class="nose">
+                <b>Nose:</b> {{modalDetails.nose}}
+              </div>
+              <div class="palate">
+                <b>Palate:</b> {{modalDetails.palate}}
+              </div>
+              <div class="bodyDescr">
+                <b>Body:</b> {{modalDetails.body}}
+              </div>
+              <div class="finish">
+                <b>Finish:</b> {{modalDetails.finish}}
+              </div>
+            </span>
+            
+          </div>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+    <!-- nav bar -->
+    <div id="navBar" class="navDisplayNone">
+      <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="mainMenuLeft">
+        <h3>Menu</h3>
+        <li ng-repeat="(id, list) in homeList" ng-click="listClick(id)">
+          {{list.name}}
+        </li>
+      </nav>
+      <nav class="navbar navbar-default searchNavBar" role="navigation">
+        <div class="navPadding">
+          <div class="title">YOUR SCOTCHES</div>
+            <span id="navMenu" ng-click="listClick('menu')" class="glyphicon glyphicon-list pull-left" ></span>
+            <span ng-click="listClick(3)" class="glyphicon glyphicon-search pull-right" ></span>
+        </div>
+      </nav>
+    </div>
+<!-- start of body -->

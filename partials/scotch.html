@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- start of body -->
+  <!-- nav bar -->
+    <div id="navBar" class="navDisplayNone">
+      <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="mainMenuLeft">
+        <h3>Menu</h3>
+        <li ng-repeat="(id, list) in homeList" ng-click="listClick(id)">
+          {{list.name}}
+        </li>
+      </nav>
+      <nav class="navbar navbar-default searchNavBar" role="navigation">
+        <div class="navPadding">
+          <div class="title">YOUR SCOTCHES</div>
+            <span id="navMenu" ng-click="listClick('menu')" class="glyphicon glyphicon-list pull-left" ></span>
+            <span ng-click="listClick(3,'search')" class="glyphicon glyphicon-search pull-right" ></span>
+        </div>
+      </nav>
+    </div>
+  <!-- SEARCH BAR -->
+  <div class="search input-group">
+    <input type="text" class="form-control" style="border-radius:0px;" ng-model="searchText" placeholder="Scotch...">
+  </div>
+  <!-- FILTER BAR-->
+  <div class="nonSearch input-group">
+    <div id="searchActionFilter" class="btn-group searchActionBtns">
+        <!-- <div class="sortByNav col-xs-4">Sort By</div>
+        -->
+        <button id="allType" type="button" class="btn btn-default col-xs-3 multiMiddleSearchBtn filterType"
+                ng-click="filterType('all')">All</button>
+        <button id="cabType" type="button" class="btn btn-default col-xs-3 multiMiddleSearchBtn"
+                ng-click="filterType('cab')">Cabinet</button>
+        <button id="favType" type="button" class="btn btn-default col-xs-3 multiMiddleSearchBtn"
+                ng-click="filterType('fav')">Favorites</button>
+        <button id="wishType" type="button" class="btn btn-default col-xs-3 multiMiddleSearchBtn"
+                ng-click="filterType('wish')">Wishlist</button>
+      </div>
+  </div>
+  <!-- YOUR LIST -->
+  <div class="container">
+    <div class="panel panel-default"
+    ng-repeat="(id, list) in favoriteScotches | multiFilter:searchText"
+    ng-click="modal(list.name, list.classification)">
+      <div class="panel-heading">
+        <h3 class="panel-title">{{list.name}} {{list.classification}}</h3>
+      </div>
+      <div class="panel-body">
+        Panel content
+      </div>
+    </div>
+  </div>
+        

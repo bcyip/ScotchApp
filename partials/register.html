@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<!-- start of body -->
+  <!-- nav bar -->
+    <div id="navBar" class="navDisplayNone">
+      <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="mainMenuLeft">
+        <h3>Menu</h3>
+        <li ng-repeat="(id, list) in homeList" ng-click="listClick(id)">
+          {{list.name}}
+        </li>
+      </nav>
+      <nav class="navbar navbar-default searchNavBar" role="navigation">
+        <div class="navPadding">
+          <div class="title">REGISTER</div>
+            <span id="navMenu" ng-click="toHome()" class="glyphicon glyphicon-chevron-left pull-left" >BACK</span>
+        </div>
+      </nav>
+    </div>

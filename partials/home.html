@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+    <!-- nav bar -->
+    <div id="navBar" class="navDisplayNone">
+      <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="mainMenuLeft">
+        <h3>Menu</h3>
+        <li ng-repeat="(id, list) in homeList" ng-click="listClick(id)">
+          {{list.name}}
+        </li>
+      </nav>
+      <nav class="navbar navbar-default searchNavBar" role="navigation">
+        <div class="navPadding">
+          <div class="title">HOME</div>
+            <span id="navMenu" ng-click="listClick('menu')" class="glyphicon glyphicon-list pull-left" ></span>
+            <span ng-click="listClick(3,'search')" class="glyphicon glyphicon-search pull-right" ></span>
+        </div>
+      </nav>
+    </div>
+<!-- start of body -->
+        <div class="container">
+            <div class="panel panel-default panel-top">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-3 col-md-3" ng-repeat="photos in viewPhotos">
+                            <div class="thumbnail">
+                                <img ng-src="images/{{photos.imageSrc}}" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    View Photos
+                    <span class='glyphicon glyphicon-chevron-right pull-right'></span>
+                </div>
+          </div>
+            <ul class="list-group">
+                <li class="list-group-item"  ng-repeat="(id, list) in homeList | filter:'!Home'" ng-click="listClick(id,'home')">
+                        {{list.name}}
+                        <span class='{{list.image}}'>{{list.badgeNum}}</i>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <!--
+                <!-- jquery --
+                <script href="supportJS/jquery.1.10.2.min.js" />
+                <!-- Bootstrap core js --
+                <script href="supportJS/bootstrap-3.2.0/js/bootstrap.3.0.0.min.js" />
+            -->
+                <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+                <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        </div>
